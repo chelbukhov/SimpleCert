@@ -1,0 +1,4 @@
+node_modules/
+.next/
+ethereum/deploy.js
+ethereum/web3.js
