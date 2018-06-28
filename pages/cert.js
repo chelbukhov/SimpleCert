@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Layout from '../components/Layout';
+import CertImage from '../components/certimage';
 import { Grid, Message, Card, Icon } from 'semantic-ui-react';
 import { Router, Link } from '../routes';
 import Course from '../ethereum/course';
@@ -86,6 +87,7 @@ class GetCert extends Component {
                                             <Icon name='user' />
                                             </Icon.Group>
                                         </div>
+					<CertImage />
                                     </Message>
                             </Grid.Column>
                         </Grid>

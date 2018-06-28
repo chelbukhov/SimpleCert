@@ -51,12 +51,14 @@ class CertIndex extends Component {
         const items = props.myCourseArr.map((request, index) => {
 
             return {
+
                 color: "blue",
                 href: `/courses/${request.coursAddress}`,
                 header:  request.courseName,
                 meta: "учебных часов: " + request.courseLength,
                 description: "Преподаватель: " + request.courseTeacher,
-                fluid: true  
+                fluid: true 
+ 
             };
         });
         return <Card.Group items={items} />;
