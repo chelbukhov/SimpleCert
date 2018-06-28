@@ -53,7 +53,7 @@ class CertIndex extends Component {
             return {
 
                 color: "blue",
-                href: `/courses/${request.coursAddress}`,
+                href: `/courses/show?address=${request.coursAddress}`,
                 header:  request.courseName,
                 meta: "учебных часов: " + request.courseLength,
                 description: "Преподаватель: " + request.courseTeacher,
@@ -84,7 +84,7 @@ class CertIndex extends Component {
                             </a>
                         </Link>
                     </Grid.Column>                        
-                </Grid>    
+                </Grid> 
                     {this.renderCourses(this.props)}
             </Layout>
         );

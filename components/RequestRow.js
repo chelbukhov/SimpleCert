@@ -49,7 +49,7 @@ class RequestRow extends Component {
         }
     
         this.setState({loading: false});
-        Router.pushRoute(`/courses/${this.props.courseAddress}`);      
+        Router.pushRoute(`/courses/show?address=${this.props.courseAddress}`);      
         
     };
 
@@ -59,7 +59,7 @@ class RequestRow extends Component {
 
         //console.log("00", {courseAddress});
         //console.log("01", {address});
-        Router.pushRoute(`/cert/${courseAddress}&address=${address}`);
+        Router.pushRoute(`/cert?courseAddress=${courseAddress}&address=${address}`);
     };
     
     onClickCert = (mylink) => {

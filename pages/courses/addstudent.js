@@ -15,9 +15,9 @@ class AddStudent extends Component {
     };
 
     static async getInitialProps(props) {
-        const course = Course(props.query.address);
-
+        const course = await Course(props.query.address);
         const courseName = await course.methods.courseName().call();
+
 
         return {
             address: props.query.address,
@@ -44,7 +44,7 @@ class AddStudent extends Component {
                 .send({
                     from: accounts[0]
             }); 
-            Router.pushRoute(`/courses/${this.props.address}`); 
+            Router.pushRoute(`/courses/show?address=${this.props.address}`); 
         } catch (err) {
             this.setState({loading: false, errorMessage: err.message });
         }
@@ -54,6 +54,7 @@ class AddStudent extends Component {
     };
 
     render() {
+
         return(
             <Layout>
                 <h3>Запись на курс: {this.props.courseName}</h3>

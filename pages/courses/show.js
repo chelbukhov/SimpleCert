@@ -3,14 +3,14 @@ import { Card, Grid, Button, Table } from 'semantic-ui-react';
 import Layout from '../../components/Layout';
 import Course from '../../ethereum/course';
 import web3 from '../../ethereum/web3';
-import { Router, Link } from '../../routes';
+import { Link } from '../../routes';
 import RequestRow from '../../components/RequestRow';
-
+//import {withRouter} from 'next/router'
 class CourseShow extends Component {
 
+
     static async getInitialProps(props) {
-        const course = Course(props.query.address);
-        //console.log("show:", props.query.address);
+        const course = await Course(props.query.address);
     
         const manager = await course.methods.manager().call();
         const courseName = await course.methods.courseName().call();
@@ -121,8 +121,7 @@ class CourseShow extends Component {
                         </Card.Content>
                         <Card.Content extra>
                             <div>
-                                <Link route={`/courses/${this.props.address}/addstudent`}>
-                                    <a>
+                                <Link route={`/courses/addstudent?address=${this.props.address}`}>
                                         <Button fluid primary animated="vertical">
                                             <Button.Content visible>
                                                 Хочу здесь учиться!
@@ -131,7 +130,6 @@ class CourseShow extends Component {
                                                 Запись на курс: {this.props.courseName} 
                                             </Button.Content>
                                         </Button>
-                                    </a>
                                 </Link>
                             </div>
                         </Card.Content>

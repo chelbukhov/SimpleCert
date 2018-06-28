@@ -7,20 +7,14 @@ import Course from '../ethereum/course';
 
 
 class GetCert extends Component {
-    //state = {
-    //    stAddres: String,
-    //    errorMessage: ""
-    //}   
 
     static async getInitialProps(props) {
         try {
-            const fullAddress = props.query.address;
-            const courseAddressPosition = fullAddress.indexOf("&address=");
-            const courseAddress = fullAddress.substr(0,courseAddressPosition);
-            const stAddressPosition = courseAddressPosition + 9;
-            const stAddress = fullAddress.substr(stAddressPosition);
-            //console.log("courseAddress: ",courseAddress);
-            //console.log("stAddress: " ,stAddress);
+	        const courseAddress = props.query.courseAddress;
+            	const stAddress = props.query.address;;
+//	    console.log("fullAddress:", fullAddress);
+//            console.log("courseAddress: ",courseAddress);
+//            console.log("stAddress: " ,stAddress);
                 const course = Course(courseAddress);
     
                 const courseName = await course.methods.courseName().call();
