@@ -102,7 +102,7 @@ class Search extends Component {
 
                     <Row key={index}>
                         <Cell>{request.courseName}</Cell>
-                        <Cell>{request.studentFIO}</Cell>
+                        <Cell>{request.studentFIO.substr(0,40)}</Cell>
                         <Cell>
                             {!request.studentPassed ? null : (
                                 <Link route={`/cert?courseaddress=${request.courseAddress}&address=${this.state.stAddres}`}>                                    
