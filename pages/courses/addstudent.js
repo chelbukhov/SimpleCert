@@ -34,6 +34,9 @@ class AddStudent extends Component {
             if (this.state.studentName.length < 10) {
                 throw new SyntaxError("Необходимо ввести Фамилию Имя студента! Не менее 10 символов.");
             }
+            if (this.state.studentName.length > 40) {
+                throw new SyntaxError("Необходимо ввести Фамилию Имя студента! Не более 40 символов.");
+            }
 
             const accounts = await web3.eth.getAccounts();
             const course = Course(`${this.props.address}`);

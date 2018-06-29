@@ -90,7 +90,7 @@ class CourseShow extends Component {
             return <RequestRow 
                 key={index}
                 id={index}
-                name={request.studentName}
+                name={request.studentName.substr(0,40)}
                 address={request.studentAddress}
                 status={request.studentPassed}
                 dateCert={request.studentPassDate}
