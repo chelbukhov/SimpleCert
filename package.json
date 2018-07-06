@@ -22,7 +22,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "startnode": "node server.js"
   },
   "author": "",
   "license": "ISC"

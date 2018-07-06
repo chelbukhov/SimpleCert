@@ -105,7 +105,7 @@ class Search extends Component {
                         <Cell>{request.studentFIO.substr(0,40)}</Cell>
                         <Cell>
                             {!request.studentPassed ? null : (
-                                <Link route={`/cert?courseaddress=${request.courseAddress}&address=${this.state.stAddres}`}>                                    
+                                <Link route={`/cert?courseAddress=${request.courseAddress}&address=${this.state.stAddres}`}>                                    
                                     <Button fluid color="blue" primary animated="vertical">
                                         <Button.Content visible>
                                             Сдан
