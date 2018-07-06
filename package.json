@@ -22,8 +22,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
-    "startnode": "node server.js"
+    "start": " next start " ,
+    "heroku-postbuild": " next build "
   },
   "author": "",
   "license": "ISC"
