@@ -1,2 +1,2 @@
-/ethereum/contracts/*.sol linguist-language=Solidity
-/pages/*.* linguist-language=JavaScript
+./ethereum/contracts/*.sol linguist-language=Solidity
+./pages/*.* linguist-language=JavaScript
